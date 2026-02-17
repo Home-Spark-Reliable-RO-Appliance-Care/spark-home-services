@@ -10,8 +10,8 @@ const NAV_LINKS = [
   { to: "/contact", label: "Contact" },
 ];
 
-const PHONE = "1234567890";
-const WHATSAPP = "911234567890";
+const PHONE = "9231421568";
+const WHATSAPP = "919231421568";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [mobileOpen, setMobileOpen] = useState(false);

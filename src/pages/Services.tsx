@@ -52,7 +52,7 @@ export default function Services() {
         <div className="container text-center">
           <h2 className="font-display text-3xl font-bold mb-4">Can't find what you need?</h2>
           <p className="text-muted-foreground mb-6">Call us and we'll help you with any home appliance issue.</p>
-          <a href="tel:1234567890">
+          <a href="tel:9231421568">
             <Button size="lg" className="gradient-primary text-primary-foreground rounded-full px-8">
               <Phone className="w-4 h-4 mr-2" /> Call Now
             </Button>
