@@ -93,8 +93,7 @@ export default function Index() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full px-8 text-base bg-white/10 backdrop-blur border border-white/40 text-white hover:bg-white hover:text-foreground transition-all duration-300"
-                  {/* className="rounded-full px-8 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition" */}
+                  className="rounded-full px-8 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition"
                 >
                   <Phone className="w-4 h-4 mr-2" /> Call Now
                 </Button>
