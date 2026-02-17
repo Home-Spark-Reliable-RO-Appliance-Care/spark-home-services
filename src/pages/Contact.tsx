@@ -17,8 +17,8 @@ const contactSchema = z.object({
   message: z.string().max(1000).optional(),
 });
 
-const PHONE = "1234567890";
-const WHATSAPP = "911234567890";
+const PHONE = "9231421568";
+const WHATSAPP = "919231421568";
 
 export default function Contact() {
   const { toast } = useToast();

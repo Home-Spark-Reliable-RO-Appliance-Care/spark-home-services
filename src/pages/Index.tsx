@@ -89,7 +89,7 @@ export default function Index() {
                   Book Service Now
                 </Button>
               </Link>
-              <a href="tel:1234567890">
+              <a href="tel:9231421568">
                 <Button
                   size="lg"
                   variant="outline"
@@ -300,7 +300,7 @@ export default function Index() {
                 Book Service Now
               </Button>
             </Link>
-            <a href="tel:1234567890">
+            <a href="tel:9231421568">
               <Button size="lg" variant="outline" className="rounded-full px-8 text-base border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10">
                 <Phone className="w-4 h-4 mr-2" /> Call Now
               </Button>
