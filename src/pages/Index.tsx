@@ -24,6 +24,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import BrandMarquee from "@/components/BrandMarquee";
+import AreasWeServe from "@/components/AreasWeServe";
 
 const STATS = [
   { icon: Users, value: "1000+", label: "Happy Customers" },
@@ -102,6 +104,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Brand Marquee */}
+      <BrandMarquee />
 
       {/* Stats */}
       <section className="relative -mt-8 z-10">
@@ -286,6 +291,9 @@ export default function Index() {
           </Accordion>
         </div>
       </section>
+
+      {/* Areas We Serve */}
+      <AreasWeServe />
 
       {/* CTA Banner */}
       <section className="py-16 md:py-20 gradient-primary text-primary-foreground">
