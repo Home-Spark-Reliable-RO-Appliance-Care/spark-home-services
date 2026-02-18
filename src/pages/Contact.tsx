@@ -159,21 +159,36 @@ export default function Contact() {
                     </div>
                     <div>
                       <div className="text-sm font-semibold">Service Area</div>
-                      <div className="text-xs text-muted-foreground">Your City, India</div>
+                      <div className="text-xs text-muted-foreground">Patna, Bihar, India</div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Map Placeholder */}
+              {/* Google Maps Embed — Patna */}
               <div className="bg-card rounded-2xl overflow-hidden shadow-card border border-border">
-                <div className="h-48 bg-muted flex items-center justify-center">
-                  <div className="text-center text-muted-foreground">
-                    <MapPin className="w-8 h-8 mx-auto mb-2" />
-                    <p className="text-sm font-medium">Map Placeholder</p>
-                    <p className="text-xs">Embed your Google Maps here</p>
+                <div className="p-4 border-b border-border">
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center">
+                      <MapPin className="w-4 h-4 text-accent-foreground" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold">Our Service Area</p>
+                      <p className="text-xs text-muted-foreground">Patna, Bihar — All major localities covered</p>
+                    </div>
                   </div>
                 </div>
+                <iframe
+                  title="HomeSpark Service Area — Patna"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114984.85990455097!2d85.01628974648436!3d25.594095338637703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sPatna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1708000000000!5m2!1sen!2sin"
+                  width="100%"
+                  height="260"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="block"
+                />
               </div>
 
               {/* Trust */}
