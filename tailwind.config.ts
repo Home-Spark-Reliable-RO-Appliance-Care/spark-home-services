@@ -98,7 +98,7 @@ export default {
         },
         "marquee": {
           from: { transform: "translateX(0)" },
-          to: { transform: "translateX(-100%)" },
+          to: { transform: "translateX(-33.333%)" },
         },
       },
       animation: {
@@ -107,7 +107,7 @@ export default {
         "fade-up": "fade-up 0.6s ease-out forwards",
         "fade-in": "fade-in 0.5s ease-out forwards",
         "count-up": "count-up 0.4s ease-out forwards",
-        "marquee": "marquee 30s linear infinite",
+        "marquee": "marquee 35s linear infinite",
       },
     },
   },
