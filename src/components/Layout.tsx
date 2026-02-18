@@ -135,7 +135,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <a href={`https://wa.me/${WHATSAPP}`} target="_blank" rel="noopener noreferrer" className="block hover:text-background transition">
                 💬 WhatsApp Us
               </a>
-              <p>📍 Your City, India</p>
+              <p>📍 Patna, Bihar | India</p>
             </div>
           </div>
         </div>
