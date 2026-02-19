@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Briefcase, MapPin, Clock, Users, TrendingUp, Heart, CheckCircle2, Phone, MessageCircle } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Briefcase, MapPin, Clock, Users, TrendingUp, Heart, CheckCircle2, Phone, MessageCircle, Send, User, Mail } from "lucide-react";
 
 const OPENINGS = [
   {
@@ -75,7 +78,26 @@ const PERKS = [
 const WHATSAPP = "919231421568";
 const PHONE = "9231421568";
 
+const POSITIONS = ["Sales Executive", "Tele Marketing Executive", "Team Lead", "Other"];
+
 export default function Careers() {
+  const [form, setForm] = useState({ name: "", phone: "", email: "", position: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Job Application – ${form.position || "General"} | HomeSpark`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nPosition Applied: ${form.position}\n\nMessage:\n${form.message}`
+    );
+    window.location.href = `mailto:info@homespark.co.in?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
+
   return (
     <>
       {/* Hero */}
@@ -195,6 +217,97 @@ export default function Careers() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Application Form */}
+      <section className="py-16 md:py-24 gradient-primary-soft">
+        <div className="container max-w-2xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4 border border-primary/20">
+              <Send className="w-4 h-4" /> Quick Apply
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold mb-3">Send Your Application</h2>
+            <p className="text-muted-foreground">Fill in the form below and we'll get back to you within 24 hours.</p>
+          </div>
+
+          <div className="bg-card rounded-2xl border border-border shadow-elevated p-8">
+            {submitted ? (
+              <div className="text-center py-10">
+                <div className="w-16 h-16 rounded-full gradient-primary flex items-center justify-center mx-auto mb-4">
+                  <CheckCircle2 className="w-8 h-8 text-primary-foreground" />
+                </div>
+                <h3 className="font-display text-xl font-bold mb-2">Application Sent!</h3>
+                <p className="text-muted-foreground">Your email client should have opened. We'll review your application and reach out soon.</p>
+                <Button className="mt-6 rounded-full gradient-primary text-primary-foreground" onClick={() => setSubmitted(false)}>
+                  Submit Another
+                </Button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Full Name <span className="text-destructive">*</span></Label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input id="name" name="name" placeholder="Your full name" className="pl-9" value={form.name} onChange={handleChange} required />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="phone">Phone Number <span className="text-destructive">*</span></Label>
+                    <div className="relative">
+                      <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                      <Input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" className="pl-9" value={form.phone} onChange={handleChange} required />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="email">Email Address</Label>
+                  <div className="relative">
+                    <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <Input id="email" name="email" type="email" placeholder="your@email.com" className="pl-9" value={form.email} onChange={handleChange} />
+                  </div>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="position">Position Applying For <span className="text-destructive">*</span></Label>
+                  <select
+                    id="position"
+                    name="position"
+                    value={form.position}
+                    onChange={handleChange}
+                    required
+                    className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    <option value="">Select a position…</option>
+                    {POSITIONS.map((p) => <option key={p} value={p}>{p}</option>)}
+                  </select>
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Cover Message <span className="text-destructive">*</span></Label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    placeholder="Tell us a little about yourself, your experience, and why you'd like to join HomeSpark…"
+                    className="min-h-[120px] resize-none"
+                    value={form.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <p className="text-xs text-muted-foreground">
+                  Your application will be sent to <span className="font-medium text-foreground">info@homespark.co.in</span>. Make sure your email client is set up on this device.
+                </p>
+
+                <Button type="submit" size="lg" className="w-full gradient-primary text-primary-foreground rounded-full font-semibold">
+                  <Send className="w-4 h-4 mr-2" /> Send Application
+                </Button>
+              </form>
+            )}
           </div>
         </div>
       </section>
