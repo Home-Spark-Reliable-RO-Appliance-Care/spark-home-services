@@ -15,7 +15,7 @@ const BRANDS = [
 
 function BrandLogo({ name, logo }: { name: string; logo: string }) {
   return (
-    <div className="flex items-center justify-center px-6 py-3 rounded-xl border border-border bg-card min-w-[140px] h-[72px] grayscale opacity-50 hover:grayscale-0 hover:opacity-100 hover:scale-110 hover:shadow-card transition-all duration-300 ease-out cursor-default shrink-0">
+    <div className="flex items-center justify-center px-6 py-3 rounded-xl border border-border bg-card min-w-[140px] h-[72px] hover:scale-110 hover:shadow-card transition-all duration-300 ease-out cursor-default shrink-0">
       <img
         src={logo}
         alt={`${name} logo`}
