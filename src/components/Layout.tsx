@@ -158,16 +158,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </footer>
 
-      {/* Floating WhatsApp */}
-      <a
-        href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hi, I need a home service.")}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-success flex items-center justify-center shadow-elevated hover:scale-110 transition-transform"
-        aria-label="Chat on WhatsApp"
-      >
-        <MessageCircle className="w-7 h-7 text-success-foreground" />
-      </a>
     </div>
   );
 }
