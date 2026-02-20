@@ -149,6 +149,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 💬 WhatsApp Us
               </a>
               <p>📍 Shiv Nagar, Beur, Anisabad | Patna - 02</p>
+              <p>📍 Dwarka Sector 19, Near Biharsadan | Delhi</p>
             </div>
           </div>
         </div>

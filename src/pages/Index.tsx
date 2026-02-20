@@ -62,7 +62,7 @@ const FAQS = [
   { q: "Do you provide warranty on repairs?", a: "Yes, all our repairs come with up to 90 days warranty on service and parts." },
   { q: "Which RO brands do you service?", a: "We service all major brands including Kent, Aquaguard, Pureit, Livpure, Blue Star, and more." },
   { q: "What are your AMC plan prices?", a: "AMC plans start from ₹1,499/year. Plans include free services, filter replacements, and priority scheduling." },
-  { q: "Is there a visiting charge?", a: "There's a minimal inspection charge of ₹99–₹199 which gets adjusted against the service bill." },
+  { q: "Is there a visiting charge?", a: "There's a minimal inspection charge of ₹99–₹299 which gets adjusted against the service bill." },
   { q: "Do you handle emergency services?", a: "Yes! For urgent issues like water leakage or AC breakdown, we offer priority emergency response." },
 ];
 
