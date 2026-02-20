@@ -15,6 +15,7 @@ import {
   ThumbsUp,
   Zap,
   BadgeCheck,
+  ShieldCheck,
 } from "lucide-react";
 import { SERVICES } from "@/lib/services-data";
 import heroImg from "@/assets/hero-bg.jpg";
@@ -79,9 +80,17 @@ export default function Index() {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur text-sm font-medium mb-6 border border-primary-foreground/20">
               <Zap className="w-4 h-4" /> Emergency &amp; Same-Day Service Available
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3">
               Expert RO &amp; Home Appliance Services at Your Doorstep
             </h1>
+            <div className="flex items-center gap-2 mb-6">
+              <span className="font-display text-xl md:text-2xl font-bold">
+                Home Spark<sup className="text-xs font-semibold ml-0.5">™</sup>
+              </span>
+              <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-success/20 backdrop-blur text-sm font-medium border border-success/30">
+                <ShieldCheck className="w-4 h-4 text-success" /> ISO 9001 Certified
+              </span>
+            </div>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed">
               Fast, Affordable &amp; Trusted Technicians for water purifiers, ACs, washing machines, refrigerators &amp; more.
             </p>

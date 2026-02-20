@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Phone, MessageCircle, Droplets, Zap } from "lucide-react";
+import { Menu, X, Phone, MessageCircle, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import homesparkLogo from "@/assets/homespark-logo.png";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
@@ -43,13 +44,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md shadow-soft border-b border-border">
         <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2 font-display font-bold text-xl">
-            <div className="w-9 h-9 rounded-lg gradient-primary flex items-center justify-center">
-              <Droplets className="w-5 h-5 text-primary-foreground" />
+          <Link to="/" className="flex items-center gap-2">
+            <img src={homesparkLogo} alt="Home Spark Logo" className="h-10 md:h-12 w-auto object-contain" />
+            <div className="flex flex-col leading-none">
+              <span className="font-display font-bold text-lg md:text-xl">
+                Home<span className="text-gradient">Spark</span>
+                <sup className="text-[10px] font-semibold text-muted-foreground ml-0.5">™</sup>
+              </span>
+              <span className="flex items-center gap-1 text-[10px] text-muted-foreground font-medium">
+                <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001 Certified
+              </span>
             </div>
-            <span>
-              Home<span className="text-gradient">Spark</span>
-            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -111,9 +116,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-foreground text-background py-12">
         <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-2 font-display font-bold text-xl mb-4">
-              <Droplets className="w-5 h-5 text-accent" />
-              HomeSpark
+            <div className="flex items-center gap-3 mb-4">
+              <img src={homesparkLogo} alt="Home Spark Logo" className="h-9 w-auto object-contain rounded-lg" />
+              <div className="flex flex-col leading-none">
+                <span className="font-display font-bold text-xl">
+                  Home Spark<sup className="text-[9px] font-semibold ml-0.5">™</sup>
+                </span>
+                <span className="flex items-center gap-1 text-[10px] text-background/60 font-medium mt-0.5">
+                  <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001 Certified Company
+                </span>
+              </div>
             </div>
             <p className="text-background/70 text-sm leading-relaxed">
               Reliable RO & Appliance Care at Your Doorstep. Trusted by 1000+ happy customers across the city.
@@ -141,7 +153,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
         </div>
         <div className="container mt-8 pt-6 border-t border-background/10 text-center text-xs text-background/50">
-          © {new Date().getFullYear()} HomeSpark. All rights reserved.
+          © {new Date().getFullYear()} Home Spark™. All rights reserved.
         </div>
       </footer>
 
