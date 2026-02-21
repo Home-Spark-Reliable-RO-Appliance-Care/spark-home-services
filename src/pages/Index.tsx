@@ -88,7 +88,7 @@ export default function Index() {
                 Home Spark<sup className="text-xs font-semibold ml-0.5">™</sup>
               </span>
               <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-success/20 backdrop-blur text-sm font-medium border border-success/30">
-                <ShieldCheck className="w-4 h-4 text-success" /> ISO 9001 Certified
+                <ShieldCheck className="w-4 h-4 text-success" /> ISO 9001:2015 Certified
               </span>
             </div>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed">
