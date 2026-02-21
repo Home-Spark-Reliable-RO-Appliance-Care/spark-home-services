@@ -52,7 +52,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <sup className="text-[10px] font-semibold text-muted-foreground ml-0.5">™</sup>
               </span>
               <span className="flex items-center gap-1 text-[10px] text-muted-foreground font-medium">
-                <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001 Certified
+                <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001:2015 Certified
               </span>
             </div>
           </Link>
@@ -123,7 +123,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   Home Spark<sup className="text-[9px] font-semibold ml-0.5">™</sup>
                 </span>
                 <span className="flex items-center gap-1 text-[10px] text-background/60 font-medium mt-0.5">
-                  <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001 Certified Company
+                  <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001:2015 Certified Company
                 </span>
               </div>
             </div>
