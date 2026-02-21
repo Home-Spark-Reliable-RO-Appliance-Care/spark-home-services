@@ -4,10 +4,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Phone, MessageCircle, MapPin, Send, CheckCircle2 } from "lucide-react";
+import { Phone, MessageCircle, MapPin, Send, CheckCircle2, Loader2 } from "lucide-react";
 import { SERVICES } from "@/lib/services-data";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const contactSchema = z.object({
   name: z.string().trim().min(1, "Name is required").max(100),
@@ -23,10 +24,11 @@ const WHATSAPP = "919231421568";
 export default function Contact() {
   const { toast } = useToast();
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [service, setService] = useState("");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
     const data = {
@@ -48,8 +50,22 @@ export default function Contact() {
     }
 
     setErrors({});
-    setSubmitted(true);
-    toast({ title: "Booking Received!", description: "We'll contact you shortly to confirm your service." });
+    setSending(true);
+    try {
+      await emailjs.send("service_ull1syo", "template_bsuis1q", {
+        name: data.name,
+        phone: data.phone,
+        service: data.service,
+        address: data.address,
+        message: data.message || "N/A",
+      }, "FYpeTNzuGjjFH9Z3a");
+      setSubmitted(true);
+      toast({ title: "Booking Received!", description: "We'll contact you shortly to confirm your service." });
+    } catch {
+      toast({ title: "Failed to send", description: "Please try again or contact us via phone.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -117,8 +133,9 @@ export default function Contact() {
                       <Label htmlFor="message">Additional Notes (Optional)</Label>
                       <Textarea id="message" name="message" placeholder="Describe the issue..." className="mt-1.5" rows={3} />
                     </div>
-                    <Button type="submit" size="lg" className="w-full gradient-primary text-primary-foreground rounded-full">
-                      <Send className="w-4 h-4 mr-2" /> Submit Booking
+                    <Button type="submit" size="lg" className="w-full gradient-primary text-primary-foreground rounded-full" disabled={sending}>
+                      {sending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+                      {sending ? "Sending..." : "Submit Booking"}
                     </Button>
                   </form>
                 )}

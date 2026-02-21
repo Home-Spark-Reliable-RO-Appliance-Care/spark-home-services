@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Briefcase, MapPin, Clock, Users, TrendingUp, Heart, CheckCircle2, Phone, MessageCircle, Send, User, Mail } from "lucide-react";
+import { Briefcase, MapPin, Clock, Users, TrendingUp, Heart, CheckCircle2, Phone, MessageCircle, Send, User, Mail, Loader2 } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
 
 const OPENINGS = [
   {
@@ -81,21 +83,33 @@ const PHONE = "9231421568";
 const POSITIONS = ["Sales Executive", "Tele Marketing Executive", "Team Lead", "Other"];
 
 export default function Careers() {
+  const { toast } = useToast();
   const [form, setForm] = useState({ name: "", phone: "", email: "", position: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Job Application – ${form.position || "General"} | HomeSpark`);
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nPhone: ${form.phone}\nEmail: ${form.email}\nPosition Applied: ${form.position}\n\nMessage:\n${form.message}`
-    );
-    window.location.href = `mailto:info@homespark.co.in?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    setSending(true);
+    try {
+      await emailjs.send("service_ull1syo", "template_bsuis1q", {
+        name: form.name,
+        phone: form.phone,
+        email: form.email || "N/A",
+        position: form.position,
+        message: form.message,
+      }, "FYpeTNzuGjjFH9Z3a");
+      setSubmitted(true);
+      toast({ title: "Application Sent!", description: "We'll review and get back to you within 24 hours." });
+    } catch {
+      toast({ title: "Failed to send", description: "Please try again or contact us via phone.", variant: "destructive" });
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -303,8 +317,9 @@ export default function Careers() {
                   Your application will be sent to <span className="font-medium text-foreground">info@homespark.co.in</span>. Make sure your email client is set up on this device.
                 </p>
 
-                <Button type="submit" size="lg" className="w-full gradient-primary text-primary-foreground rounded-full font-semibold">
-                  <Send className="w-4 h-4 mr-2" /> Send Application
+                <Button type="submit" size="lg" className="w-full gradient-primary text-primary-foreground rounded-full font-semibold" disabled={sending}>
+                  {sending ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Send className="w-4 h-4 mr-2" />}
+                  {sending ? "Sending..." : "Send Application"}
                 </Button>
               </form>
             )}
