@@ -5,12 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   server: {
-    host: true, // allow external access
+    host: "0.0.0.0",
     port: 3000,
-    allowedHosts: true, // allow all hosts
-    hmr: {
-      overlay: false,
-    },
+    strictPort: false,
+    allowedHosts: true,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
