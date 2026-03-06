@@ -6,12 +6,8 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   server: {
     host: true, // allow external access
-    port: 8080,
-    allowedHosts: [
-      "homespark.co.in",
-      "www.homespark.co.in",
-      "spark-home-services-1.onrender.com",
-    ],
+    port: 3000,
+    allowedHosts: true, // allow all hosts
     hmr: {
       overlay: false,
     },
