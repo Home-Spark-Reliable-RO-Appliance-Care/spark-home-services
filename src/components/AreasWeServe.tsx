@@ -1,19 +1,20 @@
 import { MapPin } from "lucide-react";
 
 const AREAS = [
+  "Danapur",
   "Kankarbagh",
   "Boring Road",
-  "Patliputra Colony",
-  "Rajendra Nagar",
   "Bailey Road",
+  "Patliputra",
+  "Phulwari Sharif",
+  "Anisabad",
+  "Rajendra Nagar",
   "Ashiana Nagar",
   "Fraser Road",
-  "Anisabad",
-  "Phulwari Sharif",
-  "Danapur",
   "Kurji",
   "Gandhi Maidan",
   "Agam Kuan",
+  "Patliputra Colony",
 ];
 
 export default function AreasWeServe() {

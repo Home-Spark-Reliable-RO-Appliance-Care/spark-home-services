@@ -5,16 +5,10 @@ import { componentTagger } from "lovable-tagger";
 
 export default defineConfig(({ mode }) => ({
   server: {
-    host: true, // allow external access
-    port: 8080,
-    allowedHosts: [
-      "homespark.co.in",
-      "www.homespark.co.in",
-      "spark-home-services-1.onrender.com",
-    ],
-    hmr: {
-      overlay: false,
-    },
+    host: "0.0.0.0",
+    port: 3000,
+    strictPort: false,
+    allowedHosts: true,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
