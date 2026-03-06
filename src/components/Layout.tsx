@@ -3,10 +3,12 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Phone, MessageCircle, Zap, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import homesparkLogo from "@/assets/homespark-logo.png";
+import StickyButtons from "@/components/StickyButtons";
 
 const NAV_LINKS = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/ro-service-patna", label: "RO Service" },
   { to: "/about", label: "About Us" },
   { to: "/careers", label: "Careers" },
   { to: "/contact", label: "Contact" },
@@ -111,6 +113,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Main */}
       <main className="flex-1">{children}</main>
+
+      {/* Sticky Call/WhatsApp Buttons */}
+      <StickyButtons />
 
       {/* Footer */}
       <footer className="bg-foreground text-background py-12">

@@ -81,7 +81,7 @@ export default function Index() {
               <Zap className="w-4 h-4" /> Emergency &amp; Same-Day Service Available
             </span>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3">
-              Expert RO &amp; Home Appliance Services at Your Doorstep
+              Best RO Service in Patna – Starting ₹149
             </h1>
             <div className="flex items-center gap-2 mb-6">
               <span className="font-display text-xl md:text-2xl font-bold">
@@ -92,12 +92,12 @@ export default function Index() {
               </span>
             </div>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed">
-              Fast, Affordable &amp; Trusted Technicians for water purifiers, ACs, washing machines, refrigerators &amp; more.
+              Fast RO repair, filter replacement, and maintenance by trained HomeSpark technicians for Kent, Aquaguard, Livpure &amp; all brands.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link to="/contact">
+              <Link to="/ro-service-patna">
                 <Button size="lg" className="gradient-primary text-primary-foreground rounded-full px-8 text-base shadow-elevated hover:scale-105 transition-transform">
-                  Book Service Now
+                  Book RO Service
                 </Button>
               </Link>
               <a href="tel:9231421568">
@@ -106,7 +106,7 @@ export default function Index() {
                   variant="outline"
                   className="rounded-full px-8 text-base bg-transparent border border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 transition"
                 >
-                  <Phone className="w-4 h-4 mr-2" /> Call Now
+                  <Phone className="w-4 h-4 mr-2" /> Call Technician
                 </Button>
               </a>
             </div>
