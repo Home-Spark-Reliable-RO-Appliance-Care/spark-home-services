@@ -80,17 +80,17 @@ export default function Index() {
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/20 backdrop-blur text-sm font-medium mb-6 border border-primary-foreground/20">
               <Zap className="w-4 h-4" /> Emergency &amp; Same-Day Service Available
             </span>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-3">
-              Best RO Service in Patna – Starting ₹149
-            </h1>
-            <div className="flex items-center gap-2 mb-6">
-              <span className="font-display text-xl md:text-2xl font-bold">
-                Home Spark<sup className="text-xs font-semibold ml-0.5">™</sup>
+            <div className="mb-6">
+              <span className="font-display text-3xl md:text-4xl lg:text-5xl font-black leading-tight">
+                Home<span className="text-gradient">Spark</span><sup className="text-base font-bold ml-2 align-top">™</sup>
               </span>
-              <span className="flex items-center gap-1 px-3 py-1 rounded-full bg-success/20 backdrop-blur text-sm font-medium border border-success/30">
+              <span className="flex items-center gap-2 px-3 py-1 rounded-full bg-success/20 backdrop-blur text-sm font-semibold border border-success/30 mt-3 w-fit">
                 <ShieldCheck className="w-4 h-4 text-success" /> ISO 9001:2015 Certified
               </span>
             </div>
+            <h1 className="font-display text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+              Best RO Service in Patna – Starting ₹149
+            </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 mb-8 leading-relaxed">
               Fast RO repair, filter replacement, and maintenance by trained HomeSpark technicians for Kent, Aquaguard, Livpure &amp; all brands.
             </p>
