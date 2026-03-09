@@ -45,16 +45,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       {/* Sticky Header */}
       <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-md shadow-soft border-b border-border">
-        <div className="container flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center gap-2">
-            <img src={homesparkLogo} alt="Home Spark Logo" className="h-10 md:h-12 w-auto object-contain" />
-            <div className="flex flex-col leading-none">
-              <span className="font-display font-bold text-lg md:text-xl">
+        <div className="container flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center gap-3 group">
+            <div className="relative">
+              <img src={homesparkLogo} alt="Home Spark Logo" className="h-14 md:h-16 w-auto object-contain group-hover:scale-110 transition-transform duration-300" />
+              <div className="absolute inset-0 gradient-primary rounded-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></div>
+            </div>
+            <div className="flex flex-col leading-tight">
+              <span className="font-display font-extrabold text-xl md:text-2xl">
                 Home<span className="text-gradient">Spark</span>
-                <sup className="text-[10px] font-semibold text-muted-foreground ml-0.5">™</sup>
+                <sup className="text-[11px] font-bold text-primary ml-1">™</sup>
               </span>
-              <span className="flex items-center gap-1 text-[10px] text-muted-foreground font-medium">
-                <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001:2015 Certified
+              <span className="flex items-center gap-1.5 text-[11px] text-success font-semibold">
+                <ShieldCheck className="w-3.5 h-3.5" /> ISO 9001:2015
               </span>
             </div>
           </Link>
@@ -121,14 +124,14 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <footer className="bg-foreground text-background py-12">
         <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src={homesparkLogo} alt="Home Spark Logo" className="h-9 w-auto object-contain rounded-lg" />
-              <div className="flex flex-col leading-none">
-                <span className="font-display font-bold text-xl">
-                  Home Spark<sup className="text-[9px] font-semibold ml-0.5">™</sup>
+            <div className="flex items-center gap-4 mb-4">
+              <img src={homesparkLogo} alt="Home Spark Logo" className="h-12 w-auto object-contain" />
+              <div className="flex flex-col leading-tight">
+                <span className="font-display font-extrabold text-2xl">
+                  Home<span className="text-gradient">Spark</span><sup className="text-[10px] font-bold ml-1">™</sup>
                 </span>
-                <span className="flex items-center gap-1 text-[10px] text-background/60 font-medium mt-0.5">
-                  <ShieldCheck className="w-3 h-3 text-success" /> ISO 9001:2015 Certified Company
+                <span className="flex items-center gap-1.5 text-[11px] text-background/70 font-semibold mt-1">
+                  <ShieldCheck className="w-4 h-4 text-success" /> ISO 9001:2015 Certified
                 </span>
               </div>
             </div>
