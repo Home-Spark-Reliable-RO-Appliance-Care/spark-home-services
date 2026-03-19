@@ -9,6 +9,16 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import sedimentFilterImg from "@/assets/ro-part-sediment-filter.jpg";
+import carbonFilterImg from "@/assets/ro-part-carbon-filter.jpg";
+import roMembraneImg from "@/assets/ro-part-membrane.jpg";
+import postCarbonImg from "@/assets/ro-part-post-carbon.jpg";
+import storageTankImg from "@/assets/ro-part-storage-tank.jpg";
+import pumpMotorImg from "@/assets/ro-part-pump-motor.jpg";
+import valvesImg from "@/assets/ro-part-valves.jpg";
+import tdsControllerImg from "@/assets/ro-part-tds-controller.jpg";
+import waterBefore from "@/assets/water-quality-before.jpg";
+import waterAfter from "@/assets/water-quality-after.jpg";
 
 const RO_PARTS = [
   {
@@ -16,6 +26,7 @@ const RO_PARTS = [
     name: "Sediment Filter (Pre-Filter)",
     icon: Droplets,
     color: "bg-blue-50",
+    image: sedimentFilterImg,
     lifespan: "6-12 months",
     maintenance: "Replacement",
     description:
@@ -40,6 +51,7 @@ const RO_PARTS = [
     name: "Carbon Activated Filter",
     icon: Wind,
     color: "bg-green-50",
+    image: carbonFilterImg,
     lifespan: "6-12 months",
     maintenance: "Replacement",
     description:
@@ -64,6 +76,7 @@ const RO_PARTS = [
     name: "RO Membrane",
     icon: Zap,
     color: "bg-purple-50",
+    image: roMembraneImg,
     lifespan: "2-3 years",
     maintenance: "Replacement every 24-36 months",
     description:
@@ -89,6 +102,7 @@ const RO_PARTS = [
     name: "Post-Carbon Filter (Polish Filter)",
     icon: Wind,
     color: "bg-amber-50",
+    image: postCarbonImg,
     lifespan: "6-12 months",
     maintenance: "Replacement",
     description:
@@ -112,6 +126,7 @@ const RO_PARTS = [
     name: "Storage Tank",
     icon: Droplets,
     color: "bg-teal-50",
+    image: storageTankImg,
     lifespan: "3-5 years",
     maintenance: "Regular cleaning, replacement if damaged",
     description:
@@ -137,6 +152,7 @@ const RO_PARTS = [
     name: "RO Pump & Motor",
     icon: Zap,
     color: "bg-red-50",
+    image: pumpMotorImg,
     lifespan: "3-5 years",
     maintenance: "Servicing/Replacement",
     description:
@@ -162,6 +178,7 @@ const RO_PARTS = [
     name: "Inlet & Outlet Valves",
     icon: Droplets,
     color: "bg-indigo-50",
+    image: valvesImg,
     lifespan: "2-3 years",
     maintenance: "Cleaning/Replacement",
     description:
@@ -186,6 +203,7 @@ const RO_PARTS = [
     name: "TDS Controller & Mineralizer",
     icon: Clock,
     color: "bg-cyan-50",
+    image: tdsControllerImg,
     lifespan: "2-3 years",
     maintenance: "Cartridge Replacement",
     description:
@@ -240,6 +258,15 @@ export default function ROMaintenanceGuide() {
           const Icon = part.icon;
           return (
             <Card key={part.id} className="overflow-hidden hover:shadow-lg transition-shadow">
+              {part.image && (
+                <div className="h-48 bg-gray-200 overflow-hidden">
+                  <img 
+                    src={part.image} 
+                    alt={part.name} 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
               <div className={`${part.color} p-6 border-b border-border`}>
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center shrink-0">
@@ -375,6 +402,80 @@ export default function ROMaintenanceGuide() {
               Explore AMC Plans
             </Button>
           </Link>
+        </div>
+      </div>
+
+      {/* Before & After Water Quality */}
+      <div className="space-y-6">
+        <div className="text-center">
+          <h3 className="font-display text-2xl font-bold mb-2">Water Quality Transformation</h3>
+          <p className="text-muted-foreground">See the dramatic difference HomeSpark RO maintenance makes</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="flex flex-col items-center">
+            <div className="w-full bg-red-50 rounded-lg p-4 mb-4 border-2 border-red-200">
+              <img 
+                src={waterBefore} 
+                alt="Contaminated water before RO purification - murky, brownish colored tap water" 
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
+            <h4 className="font-display text-lg font-bold text-red-600 mb-2">BEFORE Maintenance</h4>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li className="flex gap-2">
+                <span className="text-red-500">✗</span>
+                <span>Murky, discolored water</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-500">✗</span>
+                <span>Visible sediment and particles</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-500">✗</span>
+                <span>Foul taste and odor</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-500">✗</span>
+                <span>High TDS levels</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-red-500">✗</span>
+                <span>Health hazards from bacteria</span>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col items-center">
+            <div className="w-full bg-green-50 rounded-lg p-4 mb-4 border-2 border-green-200">
+              <img 
+                src={waterAfter} 
+                alt="Pure crystal clear water after RO purification - transparent clean drinking water" 
+                className="w-full h-64 object-cover rounded-lg"
+              />
+            </div>
+            <h4 className="font-display text-lg font-bold text-green-600 mb-2">AFTER HomeSpark Service</h4>
+            <ul className="text-sm text-muted-foreground space-y-1">
+              <li className="flex gap-2">
+                <span className="text-green-500">✓</span>
+                <span>Crystal clear, pure water</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-green-500">✓</span>
+                <span>Zero sediment or impurities</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-green-500">✓</span>
+                <span>Fresh taste with minerals</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-green-500">✓</span>
+                <span>Optimal TDS levels</span>
+              </li>
+              <li className="flex gap-2">
+                <span className="text-green-500">✓</span>
+                <span>100% bacteria-free water</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
