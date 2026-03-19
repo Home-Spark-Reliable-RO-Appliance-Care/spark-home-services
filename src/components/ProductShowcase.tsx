@@ -2,6 +2,14 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import PremiumProductCard, { PremiumProduct } from "@/components/PremiumProductCard";
+import productVibeBlackMarble from "@/assets/product-vibe-black-marble.jpg";
+import productVibeOceanBlue from "@/assets/product-vibe-ocean-blue.jpg";
+import productVibeForestGreen from "@/assets/product-vibe-forest-green.jpg";
+import productUrbanGreen from "@/assets/product-urban-green.jpg";
+import productUrbanBlue from "@/assets/product-urban-blue.jpg";
+import productUrbanBlack from "@/assets/product-urban-black.jpg";
+import productPremiumTankpro from "@/assets/product-premium-tankpro.jpg";
+import productPremiumBrio from "@/assets/product-premium-brio.jpg";
 
 const PRODUCT_CATEGORIES = {
   VIBE: [
@@ -9,7 +17,7 @@ const PRODUCT_CATEGORIES = {
       id: "vibe-black-marble",
       name: "VIBE Black Marble",
       tagline: "Sophisticated elegance for modern homes",
-      image: "https://via.placeholder.com/300x300?text=VIBE+Black+Marble",
+      image: productVibeBlackMarble,
       imageAlt: "HomeSpark VIBE Black Marble RO water purifier with marble finish for Patna homes",
       features: [
         "10L capacity with premium finish",
@@ -21,7 +29,7 @@ const PRODUCT_CATEGORIES = {
       id: "vibe-ocean-blue",
       name: "VIBE Ocean Blue",
       tagline: "Crystal clear water, premium design",
-      image: "https://via.placeholder.com/300x300?text=VIBE+Ocean+Blue",
+      image: productVibeOceanBlue,
       imageAlt: "HomeSpark VIBE Ocean Blue water purifier with advanced RO filtration for Patna",
       features: [
         "10L capacity with glossy finish",
@@ -33,7 +41,7 @@ const PRODUCT_CATEGORIES = {
       id: "vibe-forest-green",
       name: "VIBE Forest Green",
       tagline: "Nature-inspired purity",
-      image: "https://via.placeholder.com/300x300?text=VIBE+Forest+Green",
+      image: productVibeForestGreen,
       imageAlt: "HomeSpark VIBE Forest Green eco-friendly RO water purifier for Patna homes",
       features: [
         "10L capacity with eco finish",
@@ -47,7 +55,7 @@ const PRODUCT_CATEGORIES = {
       id: "urban-green",
       name: "URBAN Green",
       tagline: "Compact, powerful, reliable",
-      image: "https://via.placeholder.com/300x300?text=URBAN+Green",
+      image: productUrbanGreen,
       imageAlt: "HomeSpark URBAN Green compact RO water purifier for small spaces in Patna",
       features: [
         "8L capacity, space-saving design",
@@ -59,7 +67,7 @@ const PRODUCT_CATEGORIES = {
       id: "urban-blue",
       name: "URBAN Blue",
       tagline: "Smart water purification",
-      image: "https://via.placeholder.com/300x300?text=URBAN+Blue",
+      image: productUrbanBlue,
       imageAlt: "HomeSpark URBAN Blue smart RO purifier with digital display for Patna",
       features: [
         "8L capacity with digital display",
@@ -71,7 +79,7 @@ const PRODUCT_CATEGORIES = {
       id: "urban-black",
       name: "URBAN Black",
       tagline: "Sleek and sophisticated",
-      image: "https://via.placeholder.com/300x300?text=URBAN+Black",
+      image: productUrbanBlack,
       imageAlt: "HomeSpark URBAN Black sleek RO water purifier for modern Patna homes",
       features: [
         "8L capacity with matte finish",
@@ -85,7 +93,7 @@ const PRODUCT_CATEGORIES = {
       id: "premium-tankpro",
       name: "TankPro Under Sink",
       tagline: "Hidden elegance, visible purity",
-      image: "https://via.placeholder.com/300x300?text=TankPro",
+      image: productPremiumTankpro,
       imageAlt: "HomeSpark TankPro under-sink RO water purifier for kitchen installation in Patna",
       features: [
         "Space-saving under-sink design",
@@ -97,7 +105,7 @@ const PRODUCT_CATEGORIES = {
       id: "premium-brio",
       name: "BRIO Premium",
       tagline: "Ultimate water quality system",
-      image: "https://via.placeholder.com/300x300?text=BRIO+Premium",
+      image: productPremiumBrio,
       imageAlt: "HomeSpark BRIO Premium high-capacity RO water purifier for Patna families",
       features: [
         "12L capacity with premium design",
@@ -109,7 +117,7 @@ const PRODUCT_CATEGORIES = {
       id: "premium-luxe",
       name: "LUXE Infinity",
       tagline: "Luxury meets functionality",
-      image: "https://via.placeholder.com/300x300?text=LUXE+Infinity",
+      image: productPremiumBrio,
       imageAlt: "HomeSpark LUXE Infinity luxury RO water purifier system for premium Patna homes",
       features: [
         "15L capacity with premium finish",
@@ -135,8 +143,6 @@ export default function ProductShowcase({ featured = true, limit = 6, category }
   const displayProducts = limit ? categoryProducts.slice(0, limit) : categoryProducts;
 
   const handleEnquire = (productId: string, productName: string) => {
-    console.log("[v0] Enquiry for product:", productName, productId);
-    // This will be connected to the Contact form
     const encodedMessage = `Hi, I'm interested in the ${productName} from HomeSpark. Could you provide more details and pricing?`;
     window.location.href = `https://wa.me/919231421568?text=${encodeURIComponent(encodedMessage)}`;
   };
