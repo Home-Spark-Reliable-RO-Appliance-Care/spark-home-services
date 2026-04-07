@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/accordion";
 import BrandMarquee from "@/components/BrandMarquee";
 import AreasWeServe from "@/components/AreasWeServe";
+import ProductShowcase from "@/components/ProductShowcase";
 
 const STATS = [
   { icon: Users, value: "1000+", label: "Happy Customers" },
@@ -186,6 +187,9 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      {/* Product Showcase */}
+      <ProductShowcase featured={true} limit={6} />
 
       {/* How It Works */}
       <section className="py-16 md:py-24">

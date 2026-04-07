@@ -19,6 +19,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import ROMaintenanceGuide from "@/components/ROMaintenanceGuide";
 
 const SERVICES = [
   {
@@ -316,6 +317,13 @@ export default function ROServicePatna() {
               </a>
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* RO Parts & Maintenance Guide */}
+      <section className="py-16 md:py-24">
+        <div className="container">
+          <ROMaintenanceGuide />
         </div>
       </section>
 

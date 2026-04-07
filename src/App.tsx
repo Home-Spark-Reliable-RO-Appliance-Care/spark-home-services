@@ -11,6 +11,7 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Careers from "./pages/Careers";
 import ROServicePatna from "./pages/ROServicePatna";
+import Products from "./pages/Products";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
             <Route path="/contact" element={<Contact />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/ro-service-patna" element={<ROServicePatna />} />
+            <Route path="/products" element={<Products />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
